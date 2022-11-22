@@ -7,7 +7,6 @@ import com.libmailcore.IMAPMessage;
 
 public class MessageViewListActivity extends Activity
         implements MessageViewListFragment.Callbacks {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,7 +14,7 @@ public class MessageViewListActivity extends Activity
     }
 
     public void onItemSelected(IMAPMessage msg) {
-        MessagesSyncManager.singleton().currentMessage = msg;
+        IMAPMessage currentMessage = msg;
         Intent detailIntent = new Intent(this, MessageViewListActivity.class);
         startActivity(detailIntent);
     }
